@@ -1,0 +1,39 @@
+---
+configData:
+  # URL to laod at the start
+  browser: "chrome"                             # Browser to use during the test run
+  headless: false                               # Wheter we're running the headless test
+  headless-screen-size: "1920,1080"             # Size of the virtual screen for headless runs
+  screenshot-dir: "screenshots"                 # Directory to save screenshots in
+  wait-tineout: 180                             # Timeout for waiting for page elements to load
+  wait-polling: 100                             # Polling frequency when loOking for elements in MILLISECONDS
+  # Webdriver executable locations
+  driver-executable:
+    chrome-windows: "bin/chromedriver-104.exe"
+    chrome-linux: "/opt/drivers/chromedriver-linux-104"
+    edge-windows: "bin/msedgedriver-103.exe"
+    edge-linux: ""
+    # Command-line arguments for browsers
+    # Look those up in browser's documentation
+    # Comment out with # to disable the argument
+    chrome:
+      - "--disable-site-isolation-trials"
+      - "--auto-open-devtools-for-tabs"
+    edge:
+      - "--disable-site-isolation-trials"
+      - "--auto-open-devtools-for-tabs"
+    additional options:
+      mandatory-args:
+        - "--disable-gpu"
+        - "--disable-extensions"
+        - "--start maximized"
+        - "--dns-prefetch-disable"
+        - "--no-sandbox"
+        - "--enable-automation"
+        - "--ignore-certificate-errors"
+        - "--ignore-ssl-errors"
+        - "--force-device-scale-factor=1"
+        - "--disable-features+vizDisplay-compositor"
+      linux:
+        - "--no-dev-shm"
+        #     - "--proxy-server=http://proxy"                # Provide the appropriate proxy server address

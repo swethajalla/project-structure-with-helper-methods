@@ -1,0 +1,17 @@
+---
+# rest api url configuration file
+urls:
+  env1: "https://env1.com/"
+  env2: "https://env2.com/"
+  env3: "https://env3.com/"
+  env4: "https://env4.com/"
+  # flags for environments
+  flag:
+    flag-env1: true
+    flag-env2: false
+    flag-env3: false
+    flag-env4: false
+endpoint: "create/retrieveData"
+requestType: post
+
+
